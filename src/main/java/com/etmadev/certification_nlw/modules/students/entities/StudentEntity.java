@@ -9,7 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.OneToMany;
 //Lombok Imports
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,6 +28,12 @@ public class StudentEntity {
     @Column(unique = true)
     private String email;
 
-    //private List<CertificationStudentEntity> certificationStudentEntity;
+    //OneToOne
+    //OneToMany
+    //ManyToOne
+    //ManyToMany
+
+    @OneToMany(mappedBy = "studentEntity")
+    private List<CertificationStudentEntity> certificationStudentEntity;
 }
  
